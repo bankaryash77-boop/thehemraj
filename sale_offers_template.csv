@@ -1,0 +1,6 @@
+title,subtitle,badge,badge_color,image_url,link,discount_pct,expiry_date,active
+"Buy 100 Get 10 Free","Non-Woven D-Cut Bags — Minimum order 100 pcs","10% Bonus","red","https://github.com/bankaryash77-boop/thehemraj/blob/main/img/nw.png?raw=true","products.html","10","2025-12-31","true"
+"Flat ₹500 Off on Jute Bags","Orders above ₹5000 — Limited period offer","₹500 Off","green","https://github.com/bankaryash77-boop/thehemraj/blob/main/img/Jute%20(1).jpg?raw=true","products.html","","2025-12-31","true"
+"Free Custom Print","On all PP Bag orders above ₹3000","Free Print","blue","https://github.com/bankaryash77-boop/thehemraj/blob/main/img/pp.png?raw=true","products.html","","2025-12-31","true"
+"Wholesale Discount 20%","Paper Bags — Bulk Orders above 500 pcs","20% Off","orange","https://images.unsplash.com/photo-1644015040594-8924d3ecc0dd?crop=entropy&cs=srgb&fm=jpg&q=85&w=800","products.html","20","2025-12-31","true"
+"Summer Sale — Loop Bags","Premium Loop Handle Bags at clearance price","30% Off","red","https://github.com/bankaryash77-boop/thehemraj/blob/main/img/p31.jpg?raw=true","products.html","30","2025-12-31","false"
