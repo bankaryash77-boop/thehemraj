@@ -40,7 +40,7 @@
 .sale-hero {
     position: relative;
     width: 100%;
-    height: calc(100vh - 80px);
+    height: calc(120vh - 90px);
     min-height: 520px;
     max-height: 820px;
     overflow: hidden;

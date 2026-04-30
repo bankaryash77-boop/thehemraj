@@ -44,7 +44,7 @@
             title: 'Buy 100, Get 10 Free',
             subtitle: 'Non-Woven D-Cut Bags — Minimum order 100 pcs',
             badge: '10% Bonus',
-            image_url: 'https://github.com/bankaryash77-boop/thehemraj/blob/main/img/nw.png?raw=true',
+            image_url: 'img/nw.png',
             link: 'products.html',
             discount_pct: '10',
             active: 'true'
@@ -53,7 +53,7 @@
             title: 'Flat ₹500 Off on Jute Bags',
             subtitle: 'Orders above ₹5000 — Limited period offer',
             badge: '₹500 Off',
-            image_url: 'https://github.com/bankaryash77-boop/thehemraj/blob/main/img/Jute%20(1).jpg?raw=true',
+            image_url: 'img/ju.jpg',
             link: 'products.html',
             discount_pct: '',
             active: 'true'
@@ -62,7 +62,7 @@
             title: 'Free Custom Print',
             subtitle: 'On all PP Bag orders above ₹3000',
             badge: 'Free Print',
-            image_url: 'https://github.com/bankaryash77-boop/thehemraj/blob/main/img/pp.png?raw=true',
+            image_url: 'img/pp.png',
             link: 'products.html',
             discount_pct: '',
             active: 'true'
@@ -71,7 +71,7 @@
             title: 'Wholesale Discount 20%',
             subtitle: 'Paper Bags — Bulk Orders above 500 pcs',
             badge: '20% Off',
-            image_url: 'https://images.unsplash.com/photo-1644015040594-8924d3ecc0dd?crop=entropy&cs=srgb&fm=jpg&q=85&w=1920',
+            image_url: 'img/paper.avif',
             link: 'products.html',
             discount_pct: '20',
             active: 'true'

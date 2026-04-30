@@ -321,28 +321,28 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 title: 'Buy 100, Get 10 Free',
                 subtitle: 'Non-Woven Bags',
-                image_url: 'https://github.com/bankaryash77-boop/thehemraj/blob/main/img/nw.png?raw=true',
+                image_url: 'img/nw.png',
                 badge: '10% Bonus',
                 link: 'products.html#retail-nonwoven-bags'
             },
             {
                 title: 'Flat ₹500 Off on Jute Bags',
                 subtitle: 'Orders above ₹5000',
-                image_url: 'https://github.com/bankaryash77-boop/thehemraj/blob/main/img/Jute%20(1).jpg?raw=true',
+                image_url: 'img/ju.jpg',
                 badge: '₹500 Off',
                 link: 'products.html#retail-jute-bags'
             },
             {
                 title: 'Free Custom Print',
                 subtitle: 'On all PP Bag orders',
-                image_url: 'https://github.com/bankaryash77-boop/thehemraj/blob/main/img/pp.png?raw=true',
+                image_url: 'img/pp.png',
                 badge: 'Free Print',
                 link: 'products.html#retail-pp-bags'
             },
             {
                 title: 'Wholesale Discount 20%',
                 subtitle: 'Paper Bags — Bulk Orders',
-                image_url: 'https://images.unsplash.com/photo-1644015040594-8924d3ecc0dd?crop=entropy&cs=srgb&fm=jpg&q=85&w=400',
+                image_url: 'img/paper.avif',
                 badge: '20% Off',
                 link: 'products.html#wholesale-products'
             }
