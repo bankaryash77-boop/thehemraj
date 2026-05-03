@@ -404,38 +404,25 @@ RESPONSIVE
     .sale-stats-strip { padding: 0 56px; }
 }
 
-/* ---- MOBILE FIX ---- */
-@media (max-width: 900px) {
-    .sale-hero { 
-        /* Use aspect-ratio to match your 1536x1024 image (1.5 ratio) */
-        height: auto; 
-        aspect-ratio: 1.5; 
-        min-height: 300px; 
-        max-height: none; 
-        /* Remove padding so image fills the screen */
-        padding: 0; 
-    }
-    
-    .sale-slide-bg {
-        /* Show full image without cropping */
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        /* Optional: Add a white background behind the image */
-        background-color: var(--surface); 
-    }
+/* Replace your existing mobile responsive blocks with these: */
 
+@media (max-width: 900px) {
+    .sale-hero { height: 86vh; min-height: 480px; max-height: 680px; }
     .sale-thumbs { display: none; }
+    .sale-content { padding: 0 28px; max-width: 100%; }
     
-    .sale-content { 
-        padding: 0 28px; 
-        max-width: 100%; 
-        text-align: center;
-        align-items: center;
+    /* Hide arrows on tablet/mobile */
+    .sale-arrow { display: none; }
+    
+    /* Center dots now that arrows are hidden */
+    .sale-controls { 
+        left: 0; right: 0; 
+        bottom: 24px; 
+        justify-content: center; 
+        gap: 12px; 
     }
     
-    .sale-controls { left: 28px; bottom: 24px; }
-    .sale-counter  { right: 28px; bottom: 30px; }
+    .sale-counter { right: 20px; bottom: 30px; font-size: 0.72rem; }
     
     .sale-stats-strip { padding: 0 20px; flex-wrap: wrap; }
     .sale-stat {
@@ -449,27 +436,41 @@ RESPONSIVE
 }
 
 @media (max-width: 600px) {
-    .sale-hero { 
-        height: auto; 
-        aspect-ratio: 1.5; 
-        min-height: 250px; 
-        padding: 0;
+    .sale-hero { height: 82vh; min-height: 420px; }
+    
+    /* Hide arrows on small mobile */
+    .sale-arrow { display: none; }
+    
+    /* Keep dots centered */
+    .sale-controls { 
+        left: 0; right: 0; 
+        bottom: 18px; 
+        justify-content: center; 
+        gap: 10px; 
     }
     
-    .sale-slide-bg {
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-color: var(--surface);
-    }
-
+    .sale-counter { right: 16px; bottom: 24px; font-size: 0.68rem; }
+    
     .sale-headline { font-size: 1.75rem; }
     .sale-subtitle { font-size: 0.86rem; margin-bottom: 22px; }
-    .sale-actions { gap: 10px; justify-content: center; }
+    .sale-actions { gap: 10px; }
     .sale-btn-primary,
     .sale-btn-secondary { padding: 11px 20px; font-size: 0.87rem; }
     .sale-stats-strip { display: none; }
-    .sale-controls { left: 16px; }
-    .sale-counter  { right: 16px; }
-    .sale-content  { padding: 0 16px; }
+    .sale-content { padding: 0 16px; }
+}
+
+@media (max-width: 380px) {
+    .sale-hero { height: 80vh; min-height: 400px; }
+    
+    /* Hide arrows on very small screens */
+    .sale-arrow { display: none; }
+    
+    .sale-controls { bottom: 14px; justify-content: center; }
+    .sale-counter { right: 12px; bottom: 20px; font-size: 0.65rem; }
+    
+    .sale-headline { font-size: 1.45rem; }
+    .sale-subtitle { font-size: 0.78rem; }
+    .sale-btn-primary,
+    .sale-btn-secondary { padding: 10px 16px; font-size: 0.8rem; }
 }
