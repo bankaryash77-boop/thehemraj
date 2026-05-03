@@ -1,9 +1,8 @@
 /* ============================================================
-   sale_hero.css — Sale Offers Hero Carousel
-   Drop this file alongside style.css.
-   Uses ONLY CSS variables defined in style.css — no new colours.
-   ============================================================ */
-
+sale_hero.css — Sale Offers Hero Carousel
+Drop this file alongside style.css.
+Uses ONLY CSS variables defined in style.css — no new colours.
+============================================================ */
 /* ---- Ticker Bar ---- */
 .sale-ticker {
     background: linear-gradient(90deg, var(--primary-dark), var(--primary), var(--primary-dark));
@@ -20,7 +19,6 @@
     align-items: center;
 }
 @keyframes saleTickerShift { 0%{background-position:0%} 100%{background-position:200%} }
-
 .sale-ticker-track {
     display: flex;
     white-space: nowrap;
@@ -35,7 +33,6 @@
     from { transform: translateX(0); }
     to   { transform: translateX(-50%); }
 }
-
 /* ---- Hero Wrapper ---- */
 .sale-hero {
     position: relative;
@@ -46,7 +43,6 @@
     overflow: hidden;
     background: var(--text-primary);
 }
-
 /* ---- Slides ---- */
 .sale-track {
     position: relative;
@@ -67,12 +63,12 @@
     opacity: 1;
     pointer-events: auto;
 }
-
 /* Background image with Ken Burns */
 .sale-slide-bg {
     position: absolute;
     inset: 0;
-    background-size: cover;
+    /* Default to cover for desktop, mobile will override */
+    background-size: cover; 
     background-position: center;
     transform: scale(1.06);
     transition: transform 7.5s ease;
@@ -80,7 +76,6 @@
 .sale-slide.is-active .sale-slide-bg {
     transform: scale(1);
 }
-
 /* Overlay gradient */
 .sale-slide-overlay {
     position: absolute;
@@ -92,7 +87,6 @@
         rgba(17,24,39,0.08) 100%
     );
 }
-
 /* ---- Content Panel ---- */
 .sale-content {
     position: relative;
@@ -102,7 +96,6 @@
     display: flex;
     flex-direction: column;
 }
-
 /* Eyebrow */
 .sale-eyebrow {
     display: inline-flex;
@@ -139,7 +132,6 @@
     opacity: 1;
     transform: translateY(0);
 }
-
 /* Discount badge */
 .sale-badge-pill {
     display: inline-flex;
@@ -163,7 +155,6 @@
     opacity: 1;
     transform: translateX(0);
 }
-
 /* Headline */
 .sale-headline {
     font-size: clamp(1.9rem, 4.2vw, 3.5rem);
@@ -180,7 +171,6 @@
     opacity: 1;
     transform: translateY(0);
 }
-
 /* Subtitle */
 .sale-subtitle {
     font-size: clamp(0.88rem, 1.5vw, 1.02rem);
@@ -196,7 +186,6 @@
     opacity: 1;
     transform: translateY(0);
 }
-
 /* CTA buttons */
 .sale-actions {
     display: flex;
@@ -250,7 +239,6 @@
     border-color: rgba(255,255,255,0.75);
     transform: translateY(-2px);
 }
-
 /* ---- Thumbnail strip ---- */
 .sale-thumbs {
     position: absolute;
@@ -285,7 +273,6 @@
     border-color: var(--primary);
     transform: scale(1.07);
 }
-
 /* ---- Navigation Controls ---- */
 .sale-controls {
     position: absolute;
@@ -317,7 +304,6 @@
     border-color: var(--primary);
     transform: scale(1.08);
 }
-
 /* Dot indicators */
 .sale-dots { display: flex; gap: 7px; align-items: center; }
 .sale-dot {
@@ -336,7 +322,6 @@
     width: 28px;
     border-radius: 4px;
 }
-
 /* Progress bar */
 .sale-progress {
     position: absolute;
@@ -351,7 +336,6 @@
     width: 100%;
     transition: width 7s linear;
 }
-
 /* Slide counter */
 .sale-counter {
     position: absolute;
@@ -370,7 +354,6 @@
     font-size: 1.1rem;
     font-weight: 800;
 }
-
 /* ---- Stats strip ---- */
 .sale-stats-strip {
     background: var(--surface);
@@ -411,22 +394,49 @@
     font-size: 0.78rem;
     color: var(--text-muted);
 }
-
 /* ============================================================
-   RESPONSIVE
-   ============================================================ */
+RESPONSIVE
+============================================================ */
 @media (max-width: 1100px) {
     .sale-content { padding: 0 56px; }
     .sale-controls { left: 56px; }
     .sale-counter  { right: 56px; }
     .sale-stats-strip { padding: 0 56px; }
 }
+
+/* ---- MOBILE FIX ---- */
 @media (max-width: 900px) {
-    .sale-hero { height: 86vh; min-height: 480px; max-height: 680px; }
+    .sale-hero { 
+        /* Use aspect-ratio to match your 1536x1024 image (1.5 ratio) */
+        height: auto; 
+        aspect-ratio: 1.5; 
+        min-height: 300px; 
+        max-height: none; 
+        /* Remove padding so image fills the screen */
+        padding: 0; 
+    }
+    
+    .sale-slide-bg {
+        /* Show full image without cropping */
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        /* Optional: Add a white background behind the image */
+        background-color: var(--surface); 
+    }
+
     .sale-thumbs { display: none; }
-    .sale-content { padding: 0 28px; max-width: 100%; }
+    
+    .sale-content { 
+        padding: 0 28px; 
+        max-width: 100%; 
+        text-align: center;
+        align-items: center;
+    }
+    
     .sale-controls { left: 28px; bottom: 24px; }
     .sale-counter  { right: 28px; bottom: 30px; }
+    
     .sale-stats-strip { padding: 0 20px; flex-wrap: wrap; }
     .sale-stat {
         flex: 1 0 45%;
@@ -437,11 +447,25 @@
     .sale-stat:nth-child(3),
     .sale-stat:nth-child(4) { border-bottom: none; }
 }
+
 @media (max-width: 600px) {
-    .sale-hero { height: 82vh; min-height: 420px; }
+    .sale-hero { 
+        height: auto; 
+        aspect-ratio: 1.5; 
+        min-height: 250px; 
+        padding: 0;
+    }
+    
+    .sale-slide-bg {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: var(--surface);
+    }
+
     .sale-headline { font-size: 1.75rem; }
     .sale-subtitle { font-size: 0.86rem; margin-bottom: 22px; }
-    .sale-actions { gap: 10px; }
+    .sale-actions { gap: 10px; justify-content: center; }
     .sale-btn-primary,
     .sale-btn-secondary { padding: 11px 20px; font-size: 0.87rem; }
     .sale-stats-strip { display: none; }

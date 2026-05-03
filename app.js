@@ -319,17 +319,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var DEMO_OFFERS = [
             {
-                title: 'Buy 100, Get 10 Free',
+                title: 'Buy 2000, Get @2% Off',
                 subtitle: 'Non-Woven Bags',
                 image_url: 'img/nw.png',
-                badge: '10% Bonus',
+                badge: '@5% Bonus',
                 link: 'products.html#retail-nonwoven-bags'
             },
             {
-                title: 'Flat ₹500 Off on Jute Bags',
-                subtitle: 'Orders above ₹5000',
-                image_url: 'img/ju.jpg',
-                badge: '₹500 Off',
+                title: 'Flat 2% Off on  Bags',
+                subtitle: 'Orders above 2000 Qty— Limited period offer',
+                image_url: 'img/ju.png',
+                badge: '@2% Off',
                 link: 'products.html#retail-jute-bags'
             },
             {
@@ -340,10 +340,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 link: 'products.html#retail-pp-bags'
             },
             {
-                title: 'Wholesale Discount 20%',
+                title: 'Wholesale Discount @5%',
                 subtitle: 'Paper Bags — Bulk Orders',
                 image_url: 'img/paper.avif',
-                badge: '20% Off',
+                badge: '@5  % Off',
                 link: 'products.html#wholesale-products'
             }
         ];

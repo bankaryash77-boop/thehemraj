@@ -41,39 +41,39 @@
     /* ── Fallback demo data shown when no sheet URL is set ── */
     var DEMO_OFFERS = [
         {
-            title: 'Buy 100, Get 10 Free',
-            subtitle: 'Non-Woven D-Cut Bags — Minimum order 100 pcs',
-            badge: '10% Bonus',
-            image_url: 'img/nw.png',
+            title: 'Flat 2% Off on  Bags',
+            subtitle: 'Orders above 2000 Qty— Limited period offer',
+            badge: '5% Bonus',
+            image_url: 'img/b1.png',
             link: 'products.html',
-            discount_pct: '10',
+            discount_pct: '5',
             active: 'true'
         },
         {
-            title: 'Flat ₹500 Off on Jute Bags',
-            subtitle: 'Orders above ₹5000 — Limited period offer',
-            badge: '₹500 Off',
-            image_url: 'img/ju.jpg',
+            title: 'Flat 2% Off on  Bags',
+            subtitle: 'Orders above 2000 Qty— Limited period offer',
+            badge: '@2% Off',
+            image_url: 'img/b2.png',
             link: 'products.html',
             discount_pct: '',
             active: 'true'
         },
         {
             title: 'Free Custom Print',
-            subtitle: 'On all PP Bag orders above ₹3000',
+            subtitle: 'On all Non-Woven Bags orders above ₹3000',
             badge: 'Free Print',
-            image_url: 'img/pp.png',
+            image_url: 'img/nw.png',
             link: 'products.html',
             discount_pct: '',
             active: 'true'
-        },
+        },  
         {
-            title: 'Wholesale Discount 20%',
+            title: 'Wholesale Discount @5%',
             subtitle: 'Paper Bags — Bulk Orders above 500 pcs',
-            badge: '20% Off',
-            image_url: 'img/paper.avif',
+            badge: '@5% Off',
+            image_url: 'img/ju.png',
             link: 'products.html',
-            discount_pct: '20',
+            discount_pct: '5',
             active: 'true'
         }
     ];
