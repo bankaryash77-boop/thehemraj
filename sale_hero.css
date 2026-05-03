@@ -67,8 +67,7 @@ Uses ONLY CSS variables defined in style.css — no new colours.
 .sale-slide-bg {
     position: absolute;
     inset: 0;
-    /* Default to cover for desktop, mobile will override */
-    background-size: cover; 
+    background-size: cover; /* Default for desktop */
     background-position: center;
     transform: scale(1.06);
     transition: transform 7.5s ease;
@@ -404,25 +403,49 @@ RESPONSIVE
     .sale-stats-strip { padding: 0 56px; }
 }
 
-/* Replace your existing mobile responsive blocks with these: */
-
+/* ---- MOBILE & TABLET FIXES ---- */
 @media (max-width: 900px) {
-    .sale-hero { height: 86vh; min-height: 480px; max-height: 680px; }
+    /* 1. Adjust Hero Height to match image aspect ratio (1536/1024 = 1.5) */
+    /* This ensures the full image fits without being cut off by the container height */
+    .sale-hero {
+        height: auto;
+        aspect-ratio: 1.5; /* 3:2 ratio for 1536x1024 images */
+        min-height: 320px; /* Minimum height for usability */
+        max-height: none;
+    }
+
+    /* 2. Show Full Image */
+    .sale-slide-bg {
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-color: var(--surface); /* Fills empty space if any */
+    }
+
     .sale-thumbs { display: none; }
     .sale-content { padding: 0 28px; max-width: 100%; }
-    
-    /* Hide arrows on tablet/mobile */
-    .sale-arrow { display: none; }
-    
-    /* Center dots now that arrows are hidden */
-    .sale-controls { 
-        left: 0; right: 0; 
-        bottom: 24px; 
-        justify-content: center; 
-        gap: 12px; 
+
+    /* 3. Hide Navigation Arrows */
+    .sale-arrow {
+        display: none;
     }
-    
-    .sale-counter { right: 20px; bottom: 30px; font-size: 0.72rem; }
+
+    /* 4. Center Dots and Adjust Spacing */
+    .sale-controls {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: auto;
+        gap: 10px;
+    }
+
+    .sale-counter {
+        position: absolute;
+        bottom: 20px;
+        right: 20px; /* Counter stays on the right */
+        font-size: 0.72rem;
+    }
     
     .sale-stats-strip { padding: 0 20px; flex-wrap: wrap; }
     .sale-stat {
@@ -436,41 +459,38 @@ RESPONSIVE
 }
 
 @media (max-width: 600px) {
-    .sale-hero { height: 82vh; min-height: 420px; }
-    
-    /* Hide arrows on small mobile */
-    .sale-arrow { display: none; }
-    
-    /* Keep dots centered */
-    .sale-controls { 
-        left: 0; right: 0; 
-        bottom: 18px; 
-        justify-content: center; 
-        gap: 10px; 
+    /* Consistent fixes for smaller mobile screens */
+    .sale-hero {
+        height: auto;
+        aspect-ratio: 1.5;
+        min-height: 280px;
     }
-    
-    .sale-counter { right: 16px; bottom: 24px; font-size: 0.68rem; }
-    
+
+    .sale-slide-bg {
+        background-size: contain;
+        background-position: center center;
+    }
+
     .sale-headline { font-size: 1.75rem; }
     .sale-subtitle { font-size: 0.86rem; margin-bottom: 22px; }
     .sale-actions { gap: 10px; }
     .sale-btn-primary,
     .sale-btn-secondary { padding: 11px 20px; font-size: 0.87rem; }
     .sale-stats-strip { display: none; }
-    .sale-content { padding: 0 16px; }
-}
+    .sale-content  { padding: 0 16px; }
 
-@media (max-width: 380px) {
-    .sale-hero { height: 80vh; min-height: 400px; }
-    
-    /* Hide arrows on very small screens */
+    /* Ensure arrows are hidden and dots centered */
     .sale-arrow { display: none; }
     
-    .sale-controls { bottom: 14px; justify-content: center; }
-    .sale-counter { right: 12px; bottom: 20px; font-size: 0.65rem; }
+    .sale-controls {
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
     
-    .sale-headline { font-size: 1.45rem; }
-    .sale-subtitle { font-size: 0.78rem; }
-    .sale-btn-primary,
-    .sale-btn-secondary { padding: 10px 16px; font-size: 0.8rem; }
+    .sale-counter {
+        bottom: 15px;
+        right: 15px;
+        font-size: 0.68rem;
+    }
 }
