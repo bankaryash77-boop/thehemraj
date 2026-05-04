@@ -138,7 +138,7 @@ Uses ONLY CSS variables defined in style.css — no new colours.
     gap: 6px;
     background: linear-gradient(135deg, #ef4444, #f97316);
     color: #fff;
-    font-size: 0.82rem;
+    font-size: 0.62rem;
     font-weight: 800;
     padding: 5px 16px;
     border-radius: var(--radius-full);
