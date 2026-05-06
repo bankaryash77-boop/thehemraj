@@ -499,3 +499,49 @@ RESPONSIVE
         font-size: 0.68rem;
     }
 }
+/* ---- XL Screens ---- */
+@media (min-width: 1600px) {
+    .sale-content {
+        padding: 0 100px;
+        max-width: 700px;
+    }
+
+    .sale-headline {
+        font-size: 3.2rem;
+    }
+
+    .sale-subtitle {
+        font-size: 1.05rem;
+    }
+}
+
+/* ---- Full HD ---- */
+@media (min-width: 1920px) {
+    .sale-content {
+        padding: 0 140px;
+        max-width: 760px;
+    }
+
+    .sale-headline {
+        font-size: clamp(3.2rem, 3vw, 4.2rem);
+    }
+
+    .sale-subtitle {
+        font-size: 1.15rem;
+    }
+
+    .sale-controls { left: 140px; }
+    .sale-counter  { right: 140px; }
+}
+
+/* ---- Ultra Wide ---- */
+@media (min-width: 2560px) {
+    .sale-content {
+        padding: 0 180px;
+        max-width: 900px;
+    }
+
+    .sale-headline {
+        font-size: 4.5rem;
+    }
+}
