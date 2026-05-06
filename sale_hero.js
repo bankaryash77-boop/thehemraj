@@ -51,7 +51,7 @@
         },
         {
             title: ' 2% Off on RELIENCE Green ',
-            subtitle: 'Orders above 2000 Qty— Limited period offer',
+            subtitle: 'RELIENCE Green Colour of Month',
             badge: '@2% Off',
             image_url: 'img/b1.png',
             link: 'products.html',
