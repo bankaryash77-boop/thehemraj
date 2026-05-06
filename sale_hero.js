@@ -41,39 +41,39 @@
     /* ── Fallback demo data shown when no sheet URL is set ── */
     var DEMO_OFFERS = [
         {
-            title: 'Flat 2% Off on  Bags',
+            title: 'Flat 5% Off on  Bags',
             subtitle: 'Orders above 2000 Qty— Limited period offer',
             badge: '5% Bonus',
-            image_url: 'img/b1.png',
+            image_url: 'img/b2.png',
             link: 'products.html',
             discount_pct: '5',
             active: 'true'
         },
         {
-            title: 'Flat 2% Off on  Bags',
+            title: ' 2% Off on RELIENCE Green ',
             subtitle: 'Orders above 2000 Qty— Limited period offer',
             badge: '@2% Off',
-            image_url: 'img/b2.png',
+            image_url: 'img/b1.png',
             link: 'products.html',
             discount_pct: '',
             active: 'true'
         },
         {
-            title: 'Free Custom Print',
+            title: 'Free Custom Design',
             subtitle: 'On all Non-Woven Bags orders above ₹3000',
-            badge: 'Free Print',
+            badge: 'Free DESIGN',
             image_url: 'img/nw.png',
             link: 'products.html',
             discount_pct: '',
             active: 'true'
         },  
         {
-            title: 'Wholesale Discount @5%',
-            subtitle: 'Paper Bags — Bulk Orders above 500 pcs',
+            title: 'Retail Discount @5%',
+            subtitle: 'Prumium Bags for Retailers— Limited period offer',
             badge: '@5% Off',
             image_url: 'img/ju.png',
             link: 'products.html',
-            discount_pct: '5',
+            discount_pct: '20',
             active: 'true'
         }
     ];

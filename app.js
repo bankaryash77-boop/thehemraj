@@ -319,7 +319,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var DEMO_OFFERS = [
             {
-                title: 'Buy 2000, Get @2% Off',
+                title: 'Buy 2000, Get @5% Off',
                 subtitle: 'Non-Woven Bags',
                 image_url: 'img/nw.png',
                 badge: '@5% Bonus',
@@ -333,17 +333,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 link: 'products.html#retail-jute-bags'
             },
             {
-                title: 'Free Custom Print',
+                title: 'Free Custom Design',
                 subtitle: 'On all PP Bag orders',
                 image_url: 'img/pp.png',
-                badge: 'Free Print',
+                badge: 'Free Design',
                 link: 'products.html#retail-pp-bags'
             },
             {
-                title: 'Wholesale Discount @5%',
-                subtitle: 'Paper Bags — Bulk Orders',
+                title: 'Retail Discount @5%',
+                subtitle: 'Prumium Bags for Retailers— Limited period offer',
                 image_url: 'img/paper.avif',
-                badge: '@5  % Off',
+                badge: 'Coming Soon ',
                 link: 'products.html#wholesale-products'
             }
         ];
