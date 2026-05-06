@@ -396,25 +396,32 @@ Uses ONLY CSS variables defined in style.css — no new colours.
 /* ============================================================
 RESPONSIVE
 ============================================================ */
+@media (min-width: 1600px) {
+    /* Lock hero height to the exact 3:2 aspect ratio of the 1536×1024 images
+       so nothing is ever cropped from the top or bottom on wide screens. */
+    .sale-hero {
+        height: auto;
+        aspect-ratio: 3 / 2;   /* 1536 ÷ 1024 = 1.5  →  3:2 */
+        max-height: none;       /* lift the 820px cap that would re-crop the image */
+    }
+
+    .sale-slide-bg {
+        background-size: cover;
+        background-position: center center;
+    }
+
+    /* Give the content panel a bit more breathing room on ultra-wide viewports */
+    .sale-content      { padding: 0 120px; max-width: 720px; }
+    .sale-controls     { left: 120px; bottom: 48px; }
+    .sale-counter      { right: 120px; bottom: 56px; }
+    .sale-stats-strip  { padding: 0 120px; }
+}
+
 @media (max-width: 1100px) {
     .sale-content { padding: 0 56px; }
     .sale-controls { left: 56px; }
     .sale-counter  { right: 56px; }
     .sale-stats-strip { padding: 0 56px; }
-}
-
-/* ---- Restore arrows & controls positioning for desktop (overrides mobile hide) ---- */
-@media (min-width: 901px) {
-    .sale-arrow {
-        display: flex;
-    }
-    .sale-controls {
-        position: absolute;
-        bottom: 36px;
-        left: 80px;
-        transform: none;
-        width: auto;
-    }
 }
 
 /* ---- MOBILE & TABLET FIXES ---- */
@@ -479,19 +486,22 @@ RESPONSIVE
         aspect-ratio: 1.5;
         min-height: 280px;
     }
-    .sale-eyebrow { font-size: 0.62rem; font-weight: 800; padding: 4px 10px; }
-    .sale-badge-pill { font-size: 0.65rem; font-weight: 800; padding: 4px 12px; }
+    .sale-eyebrow {font-size: 0.45rem;
+    font-weight: 900;}
+    
+    .sale-badge-pill { font-size: 0.5rem;
+    font-weight: 800;}
 
     .sale-slide-bg {
         background-size: contain;
         background-position: center center;
     }
 
-    .sale-headline { font-size: clamp(1rem, 4.5vw, 1.4rem); }
-    .sale-subtitle { font-size: 0.75rem; margin-bottom: 16px; }
-    .sale-actions { gap: 8px; }
+    .sale-headline { font-size: .75rem; }
+    .sale-subtitle { font-size: 0.50rem; margin-bottom: 22px; }
+    .sale-actions { gap: 10px; }
     .sale-btn-primary,
-    .sale-btn-secondary { padding: 10px 16px; font-size: 0.78rem; }
+    .sale-btn-secondary { padding: 8px 12px; font-size: 0.50rem; }
     .sale-stats-strip { display: none; }
     .sale-content  { padding: 0 16px; }
 
@@ -508,157 +518,5 @@ RESPONSIVE
         bottom: 15px;
         right: 15px;
         font-size: 0.68rem;
-    }
-
-
-
-
-    
-@media (min-width: 1600px) {
-    .sale-content {
-        padding: 0 100px;
-        max-width: 700px;
-    }
- 
-    .sale-headline {
-        font-size: 3.2rem;
-    }
- 
-    .sale-subtitle {
-        font-size: 1.05rem;
-    }
-}
- 
- 
-/* ---- Full HD ---- */
-@media (min-width: 1920px) {
-    .sale-content {
-        padding: 0 140px;
-        max-width: 760px;
-    }
- 
-    .sale-headline {
-        font-size: clamp(3.2rem, 3vw, 4.2rem);
-    }
- 
-    .sale-subtitle {
-        font-size: 1.15rem;
-    }
- 
-    .sale-controls { left: 140px; }
-    .sale-counter  { right: 140px; }
-}
- 
-/* ---- Ultra Wide ---- */
-@media (min-width: 2560px) {
-    .sale-content {
-        padding: 0 180px;
-        max-width: 900px;
-    }
- 
-    .sale-headline {
-        font-size: 4.5rem;
-    }
- 
-    .sale-controls { left: 180px; }
-    .sale-counter  { right: 180px; }
-    .sale-thumbs   { right: 60px; }
-    .sale-stats-strip { padding: 0 180px; }
-}
- 
-/* ---- 4K / HiDPI (3200px+) ---- */
-@media (min-width: 3200px) {
-    .sale-hero {
-        /* aspect-ratio: 3/2 inherited — no max-height override so image is never cropped */
-        max-height: min(1200px, 56vw);
-    }
- 
-    .sale-content {
-        padding: 0 240px;
-        max-width: 1100px;
-    }
- 
-    .sale-headline {
-        font-size: clamp(4.5rem, 3.5vw, 6rem);
-        letter-spacing: -0.025em;
-    }
- 
-    .sale-subtitle {
-        font-size: 1.35rem;
-        max-width: 700px;
-    }
- 
-    .sale-btn-primary,
-    .sale-btn-secondary {
-        font-size: 1.1rem;
-        padding: 18px 40px;
-    }
- 
-    .sale-eyebrow {
-        font-size: 0.9rem;
-        padding: 7px 20px;
-    }
- 
-    .sale-badge-pill {
-        font-size: 0.88rem;
-        padding: 7px 22px;
-    }
- 
-    .sale-controls {
-        left: 240px;
-        bottom: 56px;
-    }
- 
-    .sale-counter {
-        right: 240px;
-        bottom: 62px;
-        font-size: 0.9rem;
-    }
- 
-    .sale-counter .cur {
-        font-size: 1.4rem;
-    }
- 
-    .sale-arrow {
-        width: 64px;
-        height: 64px;
-        font-size: 18px;
-    }
- 
-    .sale-thumb {
-        width: 96px;
-        height: 126px;
-    }
- 
-    .sale-thumbs {
-        right: 80px;
-        gap: 14px;
-    }
- 
-    .sale-stats-strip {
-        padding: 0 240px;
-    }
- 
-    .sale-stat {
-        padding: 24px 48px 24px 0;
-    }
- 
-    .sale-stat-icon {
-        width: 56px;
-        height: 56px;
-        font-size: 22px;
-    }
- 
-    .sale-stat-text strong {
-        font-size: 1.1rem;
-    }
- 
-    .sale-stat-text span {
-        font-size: 0.9rem;
-    }
- 
-    .sale-ticker {
-        height: 48px;
-        font-size: 0.95rem;
     }
 }
