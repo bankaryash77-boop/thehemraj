@@ -133,6 +133,14 @@
     var elNext     = document.getElementById('saleNext');
     var elTicker   = document.getElementById('saleTickerTrack');
 
+    /* ── WhatsApp link builder ── */
+    var WHATSAPP_NUMBER = '919730567069'; // Update with your number
+    function buildWhatsAppLink(offer) {
+        var keyword = offer.title || offer.badge || 'Special Offer';
+        var msg = 'Hi, I saw your offer: "' + keyword + '" on your website and would like a quote. Please share details.';
+        return 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg);
+    }
+
     /* ── Build slide HTML ── */
     function buildSlide(offer, idx) {
         var pct = parseInt(offer.discount_pct, 10) || 0;
@@ -159,8 +167,8 @@
                     '<a href="' + esc(offer.link || 'products.html') + '" class="sale-btn-primary">',
                         'Grab This Deal <i class="fas fa-arrow-right"></i>',
                     '</a>',
-                    '<a href="contact.html" class="sale-btn-secondary">',
-                        'Get a Quote',
+                    '<a href="' + buildWhatsAppLink(offer) + '" class="sale-btn-secondary sale-btn-whatsapp" target="_blank" rel="noopener">',
+                        '<i class="fab fa-whatsapp"></i> Get a Quote',
                     '</a>',
                 '</div>',
             '</div>'
@@ -343,18 +351,23 @@
             ? '<span class="offer-badge">' + esc(offer.badge) + '</span>'
             : '';
         return [
-            '<a href="' + esc(offer.link || 'products.html') + '" class="offer-card">',
-                '<div class="offer-img-wrap">',
-                    '<img src="' + esc(offer.image_url) + '" alt="' + esc(offer.title) + '" loading="lazy"',
-                    ' onerror="this.src=\'' + FALLBACK_THUMB + '\'">',
-                    badge,
-                '</div>',
-                '<div class="offer-body">',
-                    '<h3 class="offer-title">' + esc(offer.title) + '</h3>',
-                    '<p class="offer-sub">' + esc(offer.subtitle || '') + '</p>',
-                    '<span class="offer-cta">Grab Deal <i class="fas fa-arrow-right"></i></span>',
-                '</div>',
-            '</a>'
+            '<div class="offer-card">',
+                '<a href="' + esc(offer.link || 'products.html') + '" class="offer-card-link">',
+                    '<div class="offer-img-wrap">',
+                        '<img src="' + esc(offer.image_url) + '" alt="' + esc(offer.title) + '" loading="lazy"',
+                        ' onerror="this.src=\'' + FALLBACK_THUMB + '\'">',
+                        badge,
+                    '</div>',
+                    '<div class="offer-body">',
+                        '<h3 class="offer-title">' + esc(offer.title) + '</h3>',
+                        '<p class="offer-sub">' + esc(offer.subtitle || '') + '</p>',
+                        '<span class="offer-cta">Grab Deal <i class="fas fa-arrow-right"></i></span>',
+                    '</div>',
+                '</a>',
+                '<a href="' + buildWhatsAppLink(offer) + '" class="offer-whatsapp-btn" target="_blank" rel="noopener" title="Get a Quote on WhatsApp">',
+                    '<i class="fab fa-whatsapp"></i> Get Quote',
+                '</a>',
+            '</div>'
         ].join('');
     }
 

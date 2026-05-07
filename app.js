@@ -203,6 +203,18 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         modal.dataset.currentProductId = productId;
+
+        // ── WhatsApp links with product keyword ──
+        var waNumber = '919730567069';
+        var waMsg = 'Hi, I am interested in *' + title + '* from your website. Could you please share the pricing and details?';
+        var waUrl = 'https://wa.me/' + waNumber + '?text=' + encodeURIComponent(waMsg);
+
+        var modalWaBtn = document.getElementById('modalWhatsAppBtn');
+        if (modalWaBtn) modalWaBtn.href = waUrl;
+
+        var modalQuoteBtn = document.getElementById('modalQuoteWhatsApp');
+        if (modalQuoteBtn) modalQuoteBtn.href = waUrl;
+
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
     }
